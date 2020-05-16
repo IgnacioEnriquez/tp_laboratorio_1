@@ -8,6 +8,7 @@
 
 int main()
 {
+   
    Employee empleados[999];
    char seguir = 's';
    int flag;
