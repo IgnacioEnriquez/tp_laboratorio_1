@@ -6,25 +6,21 @@
 #include "dataWarehouse.h"
 #include "ABM.h"
 
-#define TAM 999
-#define TAMP 10
-
-void harcodearEmpleados(Employee* list,int cant);
 int main()
 {
-   Employee empleados[TAMP];
+   Employee empleados[999];
    char seguir = 's';
    int flag;
    int id = 0;
 
-   initEmployees(empleados,TAMP);
+   initEmployees(empleados,999);
 
    do
     {
       switch(menu())
       {
     case 1:
-        altaEmpleado(empleados,&flag,TAMP,id);
+        altaEmpleado(empleados,&flag,999,id);
         if(flag == 1)
         {
             id++;
@@ -33,7 +29,7 @@ int main()
     case 2:
         if(flag == 1)
         {
-        modificarEmpleado(empleados,TAMP);
+        modificarEmpleado(empleados,999);
         break;
         }
         else
@@ -47,7 +43,7 @@ int main()
     case 3:
         if(flag == 1)
         {
-        bajaEmpleado(empleados,TAMP);
+        bajaEmpleado(empleados,999);
         break;
         }
         else
@@ -61,7 +57,7 @@ int main()
     case 4:
         if(flag == 1)
         {
-        informes(empleados,TAMP);
+        informes(empleados,999);
         break;
         }
         else
@@ -93,21 +89,5 @@ int main()
 
 
     return 0;
-}
-void harcodearEmpleados(Employee* list,int cant)
-{
-
-    for(int i = 0; i< cant; i++)
-    {
-
-        list[i].id = ids[i];
-        strcpy(list[i].name, nombres[i]);
-        strcpy(list[i].lastName, apellidos[i]);
-        list[i].salary = sueldos[i];
-        list[i].isEmpty = 0;
-        list[i].sector = idsSector[i];
-
-    }
-
 }
 
